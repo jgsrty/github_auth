@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
+import axios from 'axios'
+axios.defaults.baseURL='http://localhost:3000';
+global.axios=axios;
 
 new Vue({
   router,

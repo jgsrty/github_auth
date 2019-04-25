@@ -8,6 +8,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+//cors
+var cors=require('cors');
+app.use(cors({
+    origin:['http://192.168.1.177:8081'],  //指定接收的地址
+    methods:['GET','POST'],  //指定接收的请求类型
+    alloweHeaders:['Content-Type','Authorization']  //指定header
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
